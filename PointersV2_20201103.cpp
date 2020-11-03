@@ -12,14 +12,14 @@ int main()
     printf("The address is %p and the value is %d.\n", p, *p);
     int** q = &p;
     printf("The value for *q is %p.\n",  *q); //address of a
-    printf("The value for *(*q) is %d.\n", *(*q)); // - 7
+    printf("The value for *(*q) is %d.\n", *(*q)); //  7
     int*** r = &q;
     printf("The value for *(*r)) is %p.\n", *(*r)); // address of a
-    printf("The value for *(*(*r))) is %d.\n", *(*(*r))); // - 7
+    printf("The value for *(*(*r))) is %d.\n", *(*(*r))); //  7
     ***r = 10;  //dereferencing
-    printf("The value for a is %d.\n", a); // - 10
+    printf("The value for a is %d.\n", a); //  10
     **q = *p + 2;
-    printf("The value for *(*q) is %d.\n", *(*q)); // - 12
+    printf("The value for *(*q) is %d.\n", *(*q)); //  12
 
 }
 

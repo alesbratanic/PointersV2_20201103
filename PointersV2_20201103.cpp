@@ -3,19 +3,19 @@
 
 #include <stdio.h>
 
-void Increment(int a)
+void Increment(int *p)
 {
-    a = a + 1;
-    printf("Address of a in the function %p\n", &a);
+    *p = *p + 1;
+    printf("Address of a in the function %p\n", p);
 }
 
 int main()
 {
     int a;
     a = 10;
-    Increment(a);
+    Increment(&a);
     printf("Value of a is %d\n", a);
-    printf("Address of a in the main function %p\n", &a); // 10
+    printf("Address of a in the main function %p\n", &a); // 11
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

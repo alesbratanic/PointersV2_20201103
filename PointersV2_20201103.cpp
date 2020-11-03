@@ -3,24 +3,19 @@
 
 #include <stdio.h>
 
+void Increment(int a)
+{
+    a = a + 1;
+    printf("Address of a in the function %p\n", &a);
+}
+
 int main()
 {
-    int a = 1025;
-    int* p = &a;
-    printf("The address is %p and the value is %d.\n", p, *p);
-    *p = 7;
-    printf("The address is %p and the value is %d.\n", p, *p);
-    int** q = &p;
-    printf("The value for *q is %p.\n",  *q); //address of a
-    printf("The value for *(*q) is %d.\n", *(*q)); //  7
-    int*** r = &q;
-    printf("The value for *(*r)) is %p.\n", *(*r)); // address of a
-    printf("The value for *(*(*r))) is %d.\n", *(*(*r))); //  7
-    ***r = 10;  //dereferencing
-    printf("The value for a is %d.\n", a); //  10
-    **q = *p + 2;
-    printf("The value for *(*q) is %d.\n", *(*q)); //  12
-
+    int a;
+    a = 10;
+    Increment(a);
+    printf("Value of a is %d\n", a);
+    printf("Address of a in the main function %p\n", &a); // 10
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

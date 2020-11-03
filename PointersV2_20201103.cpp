@@ -5,7 +5,7 @@
 
 int main()
 {
-    int a = 513;
+    int a = 1025;
     int* p = &a;
     printf("The address is %p and the value is %d.", p, *p);
 }

@@ -2,26 +2,31 @@
 //
 
 #include <stdio.h>
+int SumOfAllElements(int* A) {
+    int i, sum = 0;
+    
+    int sizeOfArray = sizeof(A) / sizeof(A[0]);
+    for (i = 0;i < sizeOfArray;i++) {
+        sum = sum + A[i];
+    }
+    printf("Size of array is: %d.\n Size of A is %d.\n Size of A[0] is %d\n", sizeOfArray, sizeof(A) , sizeof(A[0]));
+    printf("Sum of all elements in array is %d\n", sum);
+    return sum;
+}
 
 int main()
 {
-    int A[5];
-    int i = 0;
-    int* p = A;
-    
-    for (i = 0; i < 5; i++) {
-        A[i] = i*2;
-    }
-    //A++; //invalid
-    p++;
-    printf("Value %d at address %p.\n", *p, p);
-    for (i = 0; i < 5; i++) {
-        printf("%d element on the address %p has value %d\n", i, (A+i), *(A+i));
-        //0 element on the address 200 has value 0
-        //1 element on the address 204 has value 2
-        //...
-    }
-    //printf("First element is array %d\n", *(A+1));
+    int A[] = { 22,13,43,24,6 };
+    int total = SumOfAllElements(A);
+    printf("Sum of all elements in array is %d\n", total);
+    //int i, sum=0;
+    //int A[] = { 22,13,43,24,6 };
+    //int sizeOfArray = sizeof(A)/sizeof(A[0]);
+    //for (i = 0;i < sizeOfArray;i++) {
+    //    sum = sum + A[i];
+    //}
+    //printf("Sum of all elements in array is %d\n", sum); //107
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

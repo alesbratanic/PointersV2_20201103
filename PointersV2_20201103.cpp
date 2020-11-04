@@ -3,19 +3,14 @@
 
 #include <stdio.h>
 
-void Increment(int *p)
-{
-    *p = *p + 1;
-    printf("Address of a in the function %p\n", p);
-}
-
 int main()
 {
-    int a;
-    a = 10;
-    Increment(&a);
-    printf("Value of a is %d\n", a);
-    printf("Address of a in the main function %p\n", &a); // 11
+    int A[5];
+    int i = 0;
+    for (i = 0; i < 5; i++) {
+        A[i] = i;
+    }
+    printf("First element is array %d\n", A[0]);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

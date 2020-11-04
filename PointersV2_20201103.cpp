@@ -7,10 +7,21 @@ int main()
 {
     int A[5];
     int i = 0;
+    int* p = A;
+    
     for (i = 0; i < 5; i++) {
-        A[i] = i;
+        A[i] = i*2;
     }
-    printf("First element is array %d\n", A[0]);
+    //A++; //invalid
+    p++;
+    printf("Value %d at address %p.\n", *p, p);
+    for (i = 0; i < 5; i++) {
+        printf("%d element on the address %p has value %d\n", i, (A+i), *(A+i));
+        //0 element on the address 200 has value 0
+        //1 element on the address 204 has value 2
+        //...
+    }
+    //printf("First element is array %d\n", *(A+1));
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
